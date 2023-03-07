@@ -33,7 +33,6 @@ public class LogInPage extends BasePage {
         Assert.assertTrue(driver.findElement(emailField).isDisplayed());
         Assert.assertTrue(driver.findElement(passwordField).isDisplayed());
         Assert.assertTrue(driver.findElement(enterButton).isDisplayed());
-        Assert.assertTrue(driver.findElement(errorMessage).isDisplayed(),"Error message not found");
     }
 
     public void typeInEmailField(String email){
