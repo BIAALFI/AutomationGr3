@@ -24,5 +24,17 @@ public class BasePage {
         LOG.info("Close the browser");
         driver.quit();
     }
+    public static String returnBaseUrl(){
+        return "https://demo.automationtesting.in/Index.html";
+    }
+    public static String getBaseUrl(){
+        String baseUrl = returnBaseUrl();
+        if(baseUrl != null){
+            return baseUrl.replace("Index.html", "");
+        }
+        return baseUrl;
+
+    }
+
 
 }
