@@ -13,6 +13,5 @@ public class SignUpTest extends BaseTest {
         Assert.assertTrue(signInPage.isSignInButtonDisplayed(),"Sign in is not displayed");
         Assert.assertTrue(signInPage.isSkipSignInButtonDisplayed(),"Skip Sign in is not displayed");
         signInPage.clickSignInButton();
-
     }
 }
