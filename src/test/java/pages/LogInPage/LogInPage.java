@@ -51,6 +51,10 @@ public class LogInPage extends BasePage {
         LOG.info("Verify if error message is displayed");
         return driver.findElement(errorMessage).isDisplayed();
     }
+//    public void clickBack(){
+//        LOG.info("Clicking back in browser");
+//        driver.navigate().back();
+//    }
 
 
 }

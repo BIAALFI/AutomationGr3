@@ -20,6 +20,10 @@ public class LoginPageTests extends BaseTest {
         logInPage.clickOnEnterButton();
         Assert.assertTrue(logInPage.isErrorMessageDisplayed());
 
+
+
+
+
     }
 
 
