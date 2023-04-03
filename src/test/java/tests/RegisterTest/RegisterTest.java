@@ -25,7 +25,12 @@ public class RegisterTest extends BaseTest {
         String email = "Automation@domain.com";
         String phone = "07234456654";
         String skills = "Java";
-        String country= "India";
+        String country = "India";
+        String year = "1992";
+        String month = "August";
+        String day = "26";
+        String password = "1234";
+        String secondPassword = "12345";
 
         LOG.info("Check title");
         Assert.assertTrue(registerPage.isTitleDisplayed(), "Title is not displayed");
@@ -69,6 +74,18 @@ public class RegisterTest extends BaseTest {
 
         LOG.info("Select Country");
         registerPage.setSelectCountry(country);
+
+        LOG.info("Select Date Of Birth");
+        registerPage.setDateOfBirth(year, month, day);
+
+        LOG.info("First Password");
+        registerPage.setPassword(password, secondPassword);
+
+        LOG.info("Choose a picture");
+        registerPage.selectImage();
+
+        LOG.info("Click the submit button");
+        registerPage.clickSubmitButton();
 
 
     }

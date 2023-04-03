@@ -2,6 +2,7 @@ package pages.RegisterPage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +29,17 @@ public class RegisterPage extends BasePage {
     private By skillsField = By.id("Skills");
     private By selectCountry = By.xpath("//span[@role='combobox']");
     private By enterCountry = By.xpath("//input[@role='textbox']");
+    private By selectYear = By.id("yearbox");
+    private By selectMonth = By.xpath("//select[@placeholder='Month']");
+    private By selectDay = By.id("daybox");
+    private By firstPassword = By.id("firstpassword");
+    private By secondPassword = By.id("secondpassword");
+    private By file = By.id("imagesrc");
+    private By submitButton = By.id("submitbtn");
+
+
+
+
 
 
     private RegisterPage() {
@@ -115,13 +127,41 @@ public class RegisterPage extends BasePage {
         Select newSkill = new Select(driver.findElement(skillsField));
         newSkill.selectByValue(skills);
     }
-    public void setSelectCountry(String country){
+
+    public void setSelectCountry(String country) {
         LOG.info("Select Country");
         driver.findElement(selectCountry).click();
         driver.findElement(enterCountry).sendKeys(country);
         driver.findElement(selectCountry).sendKeys(Keys.ENTER);
     }
 
+    public void setDateOfBirth(String year, String month, String day) {
+        LOG.info("Select Date Of Birth");
+        Select newYear = new Select(driver.findElement(selectYear));
+        newYear.selectByValue(year);
+        Select newMonth = new Select(driver.findElement(selectMonth));
+        newMonth.selectByValue(month);
+        Select newDay = new Select(driver.findElement(selectDay));
+        newDay.selectByValue(day);
+    }
 
+    public void setPassword(String password, String confirmPassword) {
+        LOG.info("Type password");
+        driver.findElement(firstPassword).sendKeys(password);
+        driver.findElement(secondPassword).sendKeys(confirmPassword);
+
+    }
+
+    public void selectImage() {
+        LOG.info("Choose image to upload");
+        WebElement fileChoose = driver.findElement(file);
+        fileChoose.sendKeys("C:\\New folder");
+
+    }
+    public void clickSubmitButton(){
+        LOG.info("Click the submit button");
+        driver.findElement(submitButton).click();
+
+    }
 
 }

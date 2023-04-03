@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
@@ -17,7 +18,9 @@ public class BasePage {
         driver.get(url);
 
         LOG.info("Open browser maximmize");
-        driver.manage().window().maximize();
+      //  driver.manage().window().maximize();
+        Dimension dimension = new Dimension(1366, 768);
+        driver.manage().window().setSize(dimension);
     }
 
     public static void tearDown(){
